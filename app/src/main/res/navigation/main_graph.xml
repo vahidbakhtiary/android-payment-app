@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_graph"
+    app:startDestination="@id/dashboardFragment">
+
+
+    <fragment
+        android:id="@+id/dashboardFragment"
+        android:name="ir.sep.android.merchantapp.ui.dashboard.DashboardFragment"
+        android:label="@string/dashboard"
+        tools:layout="@layout/fragment_dashboard" >
+
+        <action
+            android:id="@+id/action_dashboardFragment_to_rollFragment"
+            app:destination="@id/rollFragment"
+            app:launchSingleTop="true"/>
+
+        <action
+            android:id="@+id/action_dashboardFragment_to_supervisorFragment"
+            app:destination="@id/supervisorFragment"
+            app:launchSingleTop="true"/>
+        <action
+            android:id="@+id/action_dashboardFragment_to_faqFragment"
+            app:destination="@id/faqFragment" />
+        <action
+            android:id="@+id/action_dashboardFragment_to_transactionReportMasterFragment"
+            app:destination="@id/transactionReportMasterFragment" />
+        <action
+            android:id="@+id/action_dashboardFragment_to_inboxFragment"
+            app:destination="@id/inboxFragment" />
+        <action
+            android:id="@+id/action_dashboardFragment_to_settingFragment"
+            app:destination="@id/settingFragment" />
+
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/transactionReportMasterFragment"
+        android:name="ir.sep.android.merchantapp.ui.transactionreport.master.TransactionReportMasterFragment"
+        android:label="@string/lbl_menu_report"
+        tools:layout="@layout/fragment_transaction_master_report" >
+        <action
+            android:id="@+id/action_transactionReportMasterFragment_to_transactionReportFilterFragment"
+            app:destination="@id/transactionReportFilterFragment" />
+        <action
+            android:id="@+id/action_transactionReportMasterFragment_to_totallyTransactionReportFilterFragment"
+            app:destination="@id/totallyTransactionReportFilterFragment" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/supportFragment"
+        android:name="ir.sep.android.merchantapp.ui.support.SupportFragment"
+        android:label="@string/lbl_menu_support"
+        tools:layout="@layout/fragment_support" />
+
+
+    <fragment
+        android:id="@+id/rollFragment"
+        android:name="ir.sep.android.merchantapp.ui.roll.RollFragment"
+        android:label="@string/lbl_menu_request_roll"
+        tools:layout="@layout/fragment_roll" />
+
+
+    <fragment
+        android:id="@+id/supervisorFragment"
+        android:name="ir.sep.android.merchantapp.ui.supervisor.SupervisorFragment"
+        android:label="@string/lbl_menu_supervisor_password"
+        tools:layout="@layout/fragment_supervisor" />
+
+
+    <fragment
+        android:id="@+id/faqFragment"
+        android:name="ir.sep.android.merchantapp.ui.faq.FaqFragment"
+        android:label="@string/lbl_menu_faq"
+        tools:layout="@layout/fragment_faq"/>
+
+
+    <fragment
+        android:id="@+id/transactionReportFilterFragment"
+        android:name="ir.sep.android.merchantapp.ui.transactionreport.TransactionReportFilterFragment"
+        android:label="@string/filter"
+        tools:layout="@layout/fragment_transaction_filter" />
+
+
+    <fragment
+        android:id="@+id/totallyTransactionReportFilterFragment"
+        android:name="ir.sep.android.merchantapp.ui.transactionreport.TotallyTransactionReportFilterFragment"
+        android:label="@string/filter"
+        tools:layout="@layout/fragment_transaction_filter"/>
+    <fragment
+        android:id="@+id/inboxFragment"
+        android:name="ir.sep.android.merchantapp.ui.inbox.InboxFragment"
+        android:label="@string/lbl_menu_massages"
+        tools:layout="@layout/fragment_inbox"/>
+    <fragment
+        android:id="@+id/settingFragment"
+        android:name="ir.sep.android.merchantapp.ui.setting.SettingFragment"
+        android:label="@string/lbl_menu_setting"
+        tools:layout="@layout/fragment_setting">
+
+        <action
+            android:id="@+id/action_settingFragment_to_aboutFragment"
+            app:destination="@id/aboutFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="ir.sep.android.merchantapp.ui.about.AboutFragment"
+        tools:layout="@layout/fragment_about"
+        android:label="@string/lbl_menu_aboutus" />
+
+</navigation>

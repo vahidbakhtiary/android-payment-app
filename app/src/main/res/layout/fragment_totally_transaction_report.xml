@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground"
+    android:layoutDirection="rtl"
+    tools:context=".ui.transactionreport.TransactionReportFragment"
+    tools:layoutDirection="rtl">
+
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/mainContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cv_info"
+                style="@style/Widget.Card.Container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:contentPadding="@dimen/large"
+                app:layout_constraintTop_toTopOf="parent">
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tv_lbl_merchant"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="پذیرنده: "
+                        android:textAppearance="@style/TextAppearance.Subtitle1"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tv_merchant"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="@style/TextAppearance.Subtitle1"
+                        app:layout_constraintBaseline_toBaselineOf="@id/tv_lbl_merchant"
+                        app:layout_constraintStart_toEndOf="@+id/tv_lbl_merchant"
+                        tools:text="123456789" />
+
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tv_lbl_termid"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/medium"
+                        android:text="ترمینال: "
+                        android:textAppearance="@style/TextAppearance.Subtitle1"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_lbl_merchant" />
+
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tv_termid"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="@style/TextAppearance.Subtitle1"
+                        app:layout_constraintBaseline_toBaselineOf="@id/tv_lbl_termid"
+                        app:layout_constraintStart_toEndOf="@+id/tv_lbl_termid"
+                        tools:text="123456789" />
+
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tv_lbl_timeline"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/medium"
+                        android:text="در بازه: "
+                        android:textAppearance="@style/TextAppearance.Subtitle1"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_lbl_termid" />
+
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tv_timeline"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="@style/TextAppearance.Subtitle2"
+                        app:layout_constraintBaseline_toBaselineOf="@id/tv_lbl_timeline"
+                        app:layout_constraintStart_toEndOf="@+id/tv_lbl_timeline"
+                        tools:text="1399/01/01 تا 1399/02/01" />
+
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tv_lbl_reverse_count"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/medium"
+                        android:text="تراکنش های برگشتی: "
+                        android:textAppearance="@style/TextAppearance.Subtitle1"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_lbl_timeline"
+                        android:visibility="gone"
+                        tools:visibility="visible"/>
+
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tv_reverse_count"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="@style/TextAppearance.Subtitle2"
+                        app:layout_constraintBaseline_toBaselineOf="@id/tv_lbl_reverse_count"
+                        app:layout_constraintStart_toEndOf="@+id/tv_lbl_reverse_count"
+                        tools:text="123456789"
+                        android:visibility="gone"
+                        tools:visibility="visible"/>
+
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tv_lbl_faild_transaction"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/medium"
+                        android:text="تراکنش های ناموفق: "
+                        android:textAppearance="@style/TextAppearance.Subtitle1"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_lbl_reverse_count"
+                        android:visibility="gone"
+                        tools:visibility="visible"/>
+
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tv_faild_transaction"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="@style/TextAppearance.Subtitle2"
+                        app:layout_constraintBaseline_toBaselineOf="@id/tv_lbl_faild_transaction"
+                        app:layout_constraintStart_toEndOf="@+id/tv_lbl_faild_transaction"
+                        tools:text="123456789"
+                        android:visibility="gone"
+                        tools:visibility="visible"/>
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cv_count"
+                style="@style/Widget.Card.Container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/medium"
+                app:layout_constraintTop_toBottomOf="@id/cv_info">
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tv_count"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/large"
+                        android:text="مجموع تراکنش‌ها"
+                        android:textAppearance="@style/TextAppearance.Subtitle1"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:id="@+id/barchar"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        tools:layout_height="250dp"
+                        android:layout_marginTop="@dimen/large"
+                        android:layout_marginBottom="@dimen/large"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_count" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <include
+        android:id="@+id/view_empty"
+        layout="@layout/empty_item" />
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

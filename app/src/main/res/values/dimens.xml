@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="txt">30sp</dimen>
+
+    <!--margin & padding-->
+    <dimen name="xxxlarge">80dp</dimen>
+    <dimen name="xxlarge">32dp</dimen>
+    <dimen name="xlarge">24dp</dimen>
+    <dimen name="large">16dp</dimen>
+    <dimen name="medium">8dp</dimen>
+    <dimen name="small">4dp</dimen>
+    <dimen name="xsmall">2dp</dimen>
+
+    <!--card corner radius-->
+    <dimen name="small_radius">4dp</dimen>
+    <dimen name="medium_radius">8dp</dimen>
+    <dimen name="large_radius">16dp</dimen>
+
+    <!--card elevation-->
+    <dimen name="small_elevation">1dp</dimen>
+    <dimen name="medium_elevation">2dp</dimen>
+    <dimen name="large_elevation">4dp</dimen>
+
+    <!--components-->
+    <dimen name="icon_size">24dp</dimen>
+    <dimen name="touchable_item_size">48dp</dimen>
+    <dimen name="button_size">54dp</dimen>
+    <dimen name="month_size">64dp</dimen>
+    <dimen name="year_size">74dp</dimen>
+    <dimen name="chip_height_size">32dp</dimen>
+    <dimen name="medium_image_size">56dp</dimen>
+    <dimen name="large_image_size">80dp</dimen>
+    <dimen name="xxlarge_image_size">300dp</dimen>
+    <dimen name="menu_item_size">64dp</dimen>
+    <dimen name="large_logo_size">128dp</dimen>
+
+</resources>

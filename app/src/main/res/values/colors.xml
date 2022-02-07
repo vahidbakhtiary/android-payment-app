@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--
+    color palette
+    https://coolors.co/0b132b-1c2541-3a506b-5bc0be-6fffe9
+    -->
+    <color name="colorPrimary">#1c2541</color>
+    <color name="colorPrimaryDark">#0b132b</color>
+    <color name="colorAccent">#039be5</color>
+
+
+    <color name="colorOnPrimary">#ffffff</color>
+    <color name="colorOnPrimaryTransparent">#00FFFFFF</color><!--30%-->
+
+    <color name="colorOnSecondary">#000000</color>
+
+    <color name="colorOnSurface">#000000</color>
+    <color name="colorSurface">#ffffff</color>
+
+    <color name="colorBackground">#fafafa</color>
+
+
+    <color name="colorBlack">#000000</color>
+    <color name="colorWhite">#ffffff</color>
+
+    <color name="colorGrey">#bdbdbd</color>
+    <color name="colorGreyLight">#f5f5f5</color>
+    <color name="colorGreyDark">#616161</color>
+
+    <color name="colorBlue">#2196f3</color><!--500-->
+    <color name="colorBlueLight">#E3F2FD</color><!--50-->
+    <color name="colorBlueDark">#1976d2</color><!--700-->
+
+    <color name="colorRed">#f44336</color><!--500-->
+    <color name="colorRedLight">#FFEBEE</color><!--50-->
+    <color name="colorRedDark">#d32f2f</color><!--700-->
+
+
+    <color name="colorGreen">#4caf50</color><!--500-->
+    <color name="colorGreenLight">#E8F5E9</color><!--50-->
+    <color name="colorGreenDark">#388e3c</color><!--700-->
+
+
+    <color name="colorBlueGS">#8E2DE2</color>
+    <color name="colorBlueGE">#4A00E0</color>
+
+    <color name="colorRedGS">#B5AC49</color>
+    <color name="colorRedGE">#3CA55C</color>
+
+    <color name="colorInfluenzaGS">#C04848</color>
+    <color name="colorInfluenzaGE">#480048</color>
+
+    <color name="colorCalmGS">#5f2c82</color>
+    <color name="colorCalmGE">#49a09d</color>
+
+    <color name="colorStellarGS">#348AC7</color>
+    <color name="colorStellarGE">#7474BF</color>
+
+    <color name="colorelectricVioletGS">#3c1053</color>
+    <color name="colorelectricVioletGE">#ad5389</color>
+
+    <color name="tttt">#000046</color>
+    <color name="dddd">#1CB5E0</color>
+
+    <color name="red_pink_start">#3f4c6b</color>
+    <color name="red_pink_stop">#606c88</color>
+
+    <!--chart colors-->
+    <color name="lightPink">#FFADAD</color>
+    <color name="orange">#FFD6A5</color>
+    <color name="lemonYellow">#FDFFB6</color>
+    <color name="teaGreen">#CAFFBF</color>
+    <color name="celeste">#9BF6FF</color>
+    <color name="babyBlue">#A0C4FF</color>
+    <color name="bluePurple">#bdb2ff</color>
+    <color name="mauve">#ffc6ff</color>
+
+</resources>

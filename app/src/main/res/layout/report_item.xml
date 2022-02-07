@@ -1,0 +1,429 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="rahsepar"
+            type="ir.sep.android.merchantapp.data.entities.Rahsepar" />
+
+        <variable
+            name="listener"
+            type="ir.sep.android.merchantapp.ui.transactionreport.adapter.TransactionReportListener" />
+
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        style="@style/Widget.Card.Container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/large"
+        android:layoutDirection="rtl"
+        app:cardBackgroundColor="@{rahsepar.shaparakstatus==1 ? @color/colorGreenLight : rahsepar.shaparakstatus==2 ? @color/colorSurface : @color/colorRedLight}">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:onClick="@{() -> listener.onMoreClick(rahsepar)}">
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/master"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/large"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_lbl_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:text="مرجع: "
+                    android:textAlignment="viewStart"
+                    android:textAppearance="@style/TextAppearance.Subtitle1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:text="@{String.valueOf(rahsepar.rrn)}"
+                    android:textAlignment="viewStart"
+                    android:textAppearance="@style/TextAppearance.Subtitle1"
+                    app:layout_constraintBaseline_toBaselineOf="@id/tv_lbl_title"
+                    app:layout_constraintEnd_toStartOf="@+id/materialCardView2"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toEndOf="@+id/tv_lbl_title"
+                    tools:text="123456789" />
+
+
+                <ImageView
+                    android:id="@+id/materialCardView2"
+                    android:layout_width="@dimen/icon_size"
+                    android:layout_height="@dimen/icon_size"
+                    android:layout_gravity="center"
+                    android:src="@{rahsepar.expanded? @drawable/ic_baseline_expand_less_24 : @drawable/ic_baseline_expand_more_24}"
+                    app:layout_constraintBaseline_toBaselineOf="@id/tv_title"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_lbl_body1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/medium"
+                    android:singleLine="true"
+                    android:text="نوع تراکنش: "
+                    android:textAppearance="@style/TextAppearance.Body1"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_title" />
+
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_body1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:text="@{rahsepar.prcode}"
+                    android:textAppearance="@style/TextAppearance.Body1"
+                    app:layout_constraintBaseline_toBaselineOf="@id/tv_lbl_body1"
+                    app:layout_constraintStart_toEndOf="@+id/tv_lbl_body1"
+                    tools:text="نوع تراکنش" />
+
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/cv_lbl_status1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/medium"
+                    android:text="وضعیت: "
+                    android:textAppearance="@style/TextAppearance.Body1"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_body1"
+                    app:layout_constraintVertical_bias="0.0" />
+
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/cv_status1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/large"
+                    android:text="@{rahsepar.shaparakstatusdesc}"
+                    android:textAppearance="@style/TextAppearance.Subtitle2"
+                    android:textColor="@{rahsepar.shaparakstatus==1 ? @color/colorGreenDark : rahsepar.shaparakstatus==2 ? @color/colorBlueDark : @color/colorRedDark}"
+                    app:layout_constraintBaseline_toBaselineOf="@id/cv_lbl_status1"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toEndOf="@id/cv_lbl_status1"
+                    app:layout_constraintVertical_bias="0.0"
+                    tools:text="وضعیت تراکنش" />
+
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/cv_lbl_status2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/medium"
+                    android:layout_marginEnd="@dimen/medium"
+                    android:text=" | "
+                    android:textAppearance="@style/TextAppearance.Subtitle2"
+                    app:layout_constraintBaseline_toBaselineOf="@id/cv_lbl_status1"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toEndOf="@+id/cv_status1"
+                    app:layout_constraintVertical_bias="0.0" />
+
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/cv_status2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/medium"
+                    android:layout_marginEnd="@dimen/medium"
+                    android:text="@{rahsepar.settlestatusdesc}"
+                    android:textAppearance="@style/TextAppearance.Subtitle2"
+                    android:textColor="@{rahsepar.settlestatus==1 ? @color/colorBlueDark : rahsepar.settlestatus==2 ? @color/colorGreenDark : @color/colorRedDark}"
+                    app:layout_constraintBaseline_toBaselineOf="@id/cv_lbl_status1"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toEndOf="@+id/cv_lbl_status2"
+                    app:layout_constraintVertical_bias="0.0"
+                    tools:text="وضعیت تسویه" />
+
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_body2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/medium"
+                    android:singleLine="true"
+                    android:text="@{rahsepar.TransactionDateTime}"
+                    android:textAppearance="@style/TextAppearance.Body2"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/cv_lbl_status1"
+                    tools:text="1399/01/17 17:01" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <View
+                android:id="@+id/line"
+                style="@style/Line"
+                android:layout_width="match_parent"
+                android:layout_marginStart="@dimen/large"
+                android:layout_marginEnd="@dimen/large"
+                android:visibility="@{rahsepar.expanded? View.VISIBLE : View.GONE}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/master"
+                app:layout_constraintVertical_bias="0.0"
+                tools:ignore="MissingConstraints" />
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/details"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/large"
+                android:visibility="@{rahsepar.expanded? View.VISIBLE : View.GONE}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/line"
+                tools:layout_constraintTop_toBottomOf="@+id/master"
+                tools:visibility="visible">
+
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_lbl_termid"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:text="ترمینال: "
+                    android:textAlignment="viewStart"
+                    android:textAppearance="@style/TextAppearance.Body1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_termid"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:text="@{String.valueOf(rahsepar.termid)}"
+                    android:textAlignment="viewStart"
+                    android:textAppearance="@style/TextAppearance.Body1"
+                    app:layout_constraintBaseline_toBaselineOf="@id/tv_lbl_termid"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toEndOf="@+id/tv_lbl_termid"
+                    tools:text="123456789" />
+
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_lbl_pan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:layout_marginTop="@dimen/medium"
+                    android:text="کارت: "
+                    android:textAlignment="viewStart"
+                    android:textAppearance="@style/TextAppearance.Body1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_lbl_termid" />
+
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_pan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:text="@{String.valueOf(rahsepar.pan)}"
+                    android:textAlignment="viewStart"
+                    android:textAppearance="@style/TextAppearance.Body1"
+                    app:layout_constraintBaseline_toBaselineOf="@id/tv_lbl_pan"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toEndOf="@+id/tv_lbl_pan"
+                    tools:text="123456789" />
+
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_lbl_originalamount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:layout_marginTop="@dimen/medium"
+                    android:text="مبلغ: "
+                    android:textAlignment="viewStart"
+                    android:textAppearance="@style/TextAppearance.Body1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_lbl_pan" />
+
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_originalamount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:text="@{String.valueOf(rahsepar.originalamount)}"
+                    android:textAlignment="viewStart"
+                    android:textAppearance="@style/TextAppearance.Body1"
+                    app:layout_constraintBaseline_toBaselineOf="@id/tv_lbl_originalamount"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toEndOf="@+id/tv_lbl_originalamount"
+                    tools:text="123456789" />
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_amount_currency"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:text="@string/lbl_rial"
+                    android:textAlignment="viewStart"
+                    android:textAppearance="@style/TextAppearance.Body1"
+                    android:layout_marginRight="@dimen/small"
+                    app:layout_constraintBaseline_toBaselineOf="@id/tv_lbl_originalamount"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toEndOf="@+id/tv_originalamount"
+                      />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_lbl_poscondtion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:layout_marginTop="@dimen/medium"
+                    android:text="درگاه: "
+                    android:textAlignment="viewStart"
+                    android:textAppearance="@style/TextAppearance.Body1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_lbl_originalamount" />
+
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_poscondtion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:text="@{String.valueOf(rahsepar.poscondtion)}"
+                    android:textAlignment="viewStart"
+                    android:textAppearance="@style/TextAppearance.Body1"
+                    app:layout_constraintBaseline_toBaselineOf="@id/tv_lbl_poscondtion"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toEndOf="@+id/tv_lbl_poscondtion"
+                    tools:text="نوع درگاه" />
+
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_lbl_straceno"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:layout_marginTop="@dimen/medium"
+                    android:text="کد رهگیری: "
+                    android:textAlignment="viewStart"
+                    android:textAppearance="@style/TextAppearance.Body1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_lbl_poscondtion" />
+
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_straceno"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:text="@{String.valueOf(rahsepar.straceno)}"
+                    android:textAlignment="viewStart"
+                    android:textAppearance="@style/TextAppearance.Body1"
+                    app:layout_constraintBaseline_toBaselineOf="@id/tv_lbl_straceno"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toEndOf="@+id/tv_lbl_straceno"
+                    tools:text="123456789" />
+
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_lbl_location"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:layout_marginTop="@dimen/medium"
+                    android:text="موقعیت: "
+                    android:textAlignment="viewStart"
+                    android:textAppearance="@style/TextAppearance.Body1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_lbl_straceno" />
+
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_city"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:text="@{String.valueOf(rahsepar.provincename)}"
+                    android:textAlignment="viewStart"
+                    android:textAppearance="@style/TextAppearance.Body1"
+                    app:layout_constraintBaseline_toBaselineOf="@id/tv_lbl_location"
+                    app:layout_constraintStart_toEndOf="@+id/tv_lbl_location"
+                    tools:text="تهران" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/cv_lbl_divider"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginEnd="@dimen/medium"
+                    android:text=" | "
+                    android:textAppearance="@style/TextAppearance.Body1"
+                    app:layout_constraintBaseline_toBaselineOf="@id/tv_lbl_location"
+                    app:layout_constraintStart_toEndOf="@+id/tv_city" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_province"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:text="@{String.valueOf(rahsepar.cityname)}"
+                    android:textAlignment="viewStart"
+                    android:textAppearance="@style/TextAppearance.Body1"
+                    app:layout_constraintBaseline_toBaselineOf="@id/tv_lbl_location"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toEndOf="@+id/cv_lbl_divider"
+                    tools:text="تهران" />
+
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</layout>

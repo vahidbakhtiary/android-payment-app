@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="@color/colorBackground"
+    android:layoutDirection="rtl"
+    tools:context=".ui.login.SmsFragment">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_help"
+            style="@style/TextAppearance.Subtitle1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/xlarge"
+            android:layout_marginTop="@dimen/xxxlarge"
+            android:layout_marginEnd="@dimen/xlarge"
+            android:text="کد فعالسازی برای شما فرستاده شد، لطفا آن را وارد کنید."
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <com.mukesh.OtpView
+            android:id="@+id/et_pin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/xlarge"
+            android:inputType="number"
+            android:textColor="@color/colorOnSurface"
+            app:OtpItemCount="5"
+            app:OtpItemSpacing="@dimen/large"
+            app:OtpLineColor="@color/colorAccent"
+            app:OtpViewType="line"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_help" />
+
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_timer"
+            style="@style/TextAppearance.Subtitle2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/xlarge"
+            android:text="00:00"
+            android:textAlignment="center"
+            android:textColor="@color/colorRed"
+            app:layout_constraintBaseline_toBaselineOf="@id/btn_back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_pin" />
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_try_again"
+            android:visibility="gone"
+            style="@style/Widget.Button.TextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/touchable_item_size"
+            android:layout_margin="@dimen/xlarge"
+            android:text="ارسال مجدد"
+            android:textColor="@color/colorRed"
+            app:layout_constraintBaseline_toBaselineOf="@id/btn_back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_pin"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_back"
+            style="@style/Widget.Button.TextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/touchable_item_size"
+            android:layout_margin="@dimen/xlarge"
+            android:text="شماره رو اشتباه وارد کردی؟"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/tv_timer"
+            app:layout_constraintTop_toBottomOf="@+id/et_pin" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_login"
+            style="@style/Widget.Button.Large"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/touchable_item_size"
+            android:layout_margin="@dimen/xlarge"
+            android:text="ورود"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_back"
+            app:layout_constraintVertical_bias="0.94" />
+
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.core.widget.NestedScrollView>

@@ -1,0 +1,96 @@
+<resources>
+    <string name="app_name">Merchant</string>
+
+    <string name="dashboard">داشبورد</string>
+
+
+    <string name="lbl_terminal_number">شماره ترمینال</string>
+    <string name="lbl_regsiter">ثبت‌نام</string>
+    <string name="lbl_phone">موبایل</string>
+    <string name="lbl_number">شماره</string>
+    <string name="lbl_cell_number">شماره موبایل</string>
+    <string name="lbl_request_roll">شماره ترمینال خود را وارد کنید و درخواست را بزنید.</string>
+    <string name="lbl_request">درخواست</string>
+    <string name="lbl_try_again">تلاش مجدد</string>
+    <string name="lbl_call_supporter">تماس با پشتیبانی</string>
+    <string name="lbl_requests_history">تاریخچه درخواست‌ها</string>
+    <string name="lbl_transaction_report">ریز تراکنش</string>
+    <string name="lbl_totally_transaction_report">سرجمع تراکنش</string>
+    <string name="lbl_balance">مانده گیری</string>
+    <string name="lbl_merchant_number">شماره پذیرنده</string>
+    <string name="lbl_cancel">لغو</string>
+    <string name="lbl_accept">تایید</string>
+
+    <!--menus-->
+    <string name="lbl_menu_supervisor_password">بازنشانی رمز</string>
+    <string name="lbl_menu_support">پشتیبانی</string>
+    <string name="lbl_menu_request_roll">درخواست کاغذ</string>
+    <string name="lbl_menu_faq">سوالات متداول</string>
+    <string name="lbl_menu_report">گزارشات</string>
+    <string name="lbl_menu_change_address">تغییر آدرس</string>
+    <string name="lbl_menu_massages">پیام‌ها</string>
+    <string name="lbl_menu_call_center">تماس با مرکز</string>
+    <string name="lbl_menu_setting">تنظیمات</string>
+    <string name="lbl_menu_aboutus">درباره ما</string>
+    <string name="lbl_menu_suggest">معرفی به دوستان</string>
+    <string name="lbl_menu_exit">خروج</string>
+    <string name="lbl_menu_update_app">بروزرسانی</string>
+
+    <string name="alert_invalid_pass_message">رمز امنیتی درست نمی باشد</string>
+    <string name="alert_faild_message">خطا در دریافت اطلاعات</string>
+    <string name="alert_pin_can_not_empty">لطفا کد را وارد کنید</string>
+    <string name="alert_pass_can_not_empty">لطفا رمز امنیتی را وارد کنید</string>
+    <string name="alert_edittext_can_not_be_empty">مقادیر نمی توانند خالی باشند</string>
+    <string name="alert_mobile_number_not_valid">شماره موبایل معتبر نیست</string>
+    <string name="alert_error">خطا</string>
+    <string name="alert_faild_call_webservice">ارتباط با سرور برقرار نمی باشد یا خطا در ارتباط رخ داده است. اینترنت خود را چک کنید</string>
+    <string name="aler_terminal_number_mandatory">شماره ترمینال اجباری می باشد</string>
+    <string name="aler_phone_number_mandatory">شماره موبایل اجباری می باشد</string>
+    <string name="alert_suggest_message">سلام\n برای دانلود اپلیکیشن سپ یار از لینک زیر استفاده کنید. </string>
+    <string name="alert_share_using">معرفی اپلیکیشن سپ یار</string>
+    <string name="lbl_roll_note">پذیرنده گرامی \n
+به ازای هر  <b><u>۲۰۰ تراکنش</u></b>  یک‌عدد رول تخصیص خواهد یافت، در صورتی که تراکنش شما به حد نصاب رسیده باشد، رول مد نظر شما توسط پشتیبان شرکت تحویل خواهد شد.
+</string>
+    <string name="lbl_bill">قبض</string>
+    <string name="lbl_charge">شارژ</string>
+    <string name="lbl_groupcharge">شارژ گروهی</string>
+    <string name="lbl_purchase">خرید</string>
+    <string name="lbl_topupcharge">شارژ مستقیم</string>
+    <string name="lbl_rial">ریال</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="filter">فیلتر</string>
+    <string name="lbl_totaly_charg">مجموع مبلغ شارژ</string>
+    <string name="lbl_totaly_bill">مجموع مبلغ قبض</string>
+    <string name="lbl_count_charg">تعداد شارژ</string>
+    <string name="lbl_count_bill">تعداد قبض</string>
+    <string name="lbl_count_sale">تعداد خرید</string>
+    <string name="lbl_more_details">جزییات بیشتر</string>
+    <string name="lbl_connection_error">در حال حاضر ارتباط با سرور برقرار نمی باشد. ابتدا اینترنت خود را چک کنید و مجدد تلاش نمایید.</string>
+    <string name="lbl_no_internet">عدم اتصال به اینترنت</string>
+    <string name="lbl_password">برای افزایش امنیت یک رمز امنیتی وارد کنید</string>
+    <string name="lbl_enter_password">رمز امنیتی خود را وارد کنید</string>
+    <string name="lbl_company_name">پرداخت الکترونیک سامان</string>
+    <string name="lbl_sep_phone_number">021-84080</string>
+    <string name="lbl_sep_website">www.sep.ir</string>
+    <string name="lbl_sep_email">info@sep.ir</string>
+    <string name="lbl_sep_instagram">sep_ir</string>
+
+    <string-array name="month_array">
+        <item>فروردین</item>
+        <item>اردیبهشت</item>
+        <item>خرداد</item>
+
+        <item>تیر</item>
+        <item>مرداد</item>
+        <item>شهریور</item>
+
+        <item>مهر</item>
+        <item>آبان</item>
+        <item>آذر</item>
+
+        <item>دی</item>
+        <item>بهمن</item>
+        <item>اسفند</item>
+    </string-array>
+</resources>

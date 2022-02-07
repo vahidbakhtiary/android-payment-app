@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="data"
+            type="ir.sep.android.merchantapp.data.entities.MerchantServiceBaseEntity.ReceiptPaperList" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/medium"
+        android:layoutDirection="rtl"
+        app:cardCornerRadius="@dimen/medium_radius"
+        app:cardElevation="@dimen/small_elevation"
+        app:contentPadding="@dimen/large"
+        tools:layoutDirection="ltr">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_lbl_termPMID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="کد درخواست: "
+                android:textAppearance="@style/TextAppearance.Subtitle1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_termPMID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{String.valueOf(data.receiptID)}"
+                android:textAppearance="@style/TextAppearance.Subtitle1"
+                app:layout_constraintBaseline_toBaselineOf="@id/tv_lbl_termPMID"
+                app:layout_constraintStart_toEndOf="@+id/tv_lbl_termPMID"
+                tools:text="123456789" />
+
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_lbl_terminalNO"
+                android:layout_width="wrap_content"
+
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/medium"
+                android:text="ترمینال: "
+                android:textAppearance="@style/TextAppearance.Subtitle1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_lbl_termPMID" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_terminalNO"
+                android:layout_width="wrap_content"
+
+                android:layout_height="wrap_content"
+                android:text="@{String.valueOf(data.terminalNO)}"
+                android:textAppearance="@style/TextAppearance.Subtitle1"
+                app:layout_constraintBaseline_toBaselineOf="@id/tv_lbl_terminalNO"
+                app:layout_constraintStart_toEndOf="@+id/tv_lbl_terminalNO"
+                tools:text="123456789" />
+
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_instCreatepDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/medium"
+                android:text="@{String.valueOf(data.receiptpDate)}"
+                android:textAppearance="@style/TextAppearance.Body2"
+                app:layout_constraintBaseline_toBaselineOf="@id/tv_lbl_terminalNO"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_lbl_terminalNO"
+                tools:text="123456789" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</layout>

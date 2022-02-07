@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/dashboardFragment"
+        android:title="@string/dashboard"
+        android:icon="@drawable/ic_baseline_dashboard_24" />
+
+    <item
+        android:id="@+id/transactionReportMasterFragment"
+        android:title="@string/lbl_menu_report"
+        android:icon="@drawable/ic_chart2" />
+
+    <item
+        android:id="@+id/supportFragment"
+        android:title="@string/lbl_menu_support"
+        android:icon="@drawable/ic_support_2" />
+
+    <item
+        android:id="@+id/settingFragment"
+        android:title="@string/lbl_menu_setting"
+        android:icon="@drawable/ic_baseline_settings_24" />
+</menu>
